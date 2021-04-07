@@ -1,5 +1,7 @@
 package com.poc.generic;
 
+import java.util.ArrayList;
+
 public class GenericIllustration {
 	public static void main(String[] args) {
 
@@ -41,12 +43,40 @@ public class GenericIllustration {
 		dllg.insertFirst(in1);
 		dllg.insertLast(in4);
 		dllg.displayElements();
-		String search = new String("Maths");
+
+		dllg.insertLast(in1);
+		dllg.insertFirst(in2);
+		dllg.InsertAtIndex(in6, 2);
+		System.out.println("Also inserting duplicate nodes");
+		dllg.displayElements();
+		String search = new String("React");
 		int index = dllg.find(search);
 		if (index >= 0) {
-			System.out.println("Element found at " + index);
+			System.out.println(search + " Element found at " + index);
 		} else {
-			System.out.println("Not found");
+			System.out.println(search + " Not found");
 		}
+		System.out.println(" ");
+		String search1 = new String("MySq");
+		ArrayList<Integer> index1 = dllg.findAll(search1);
+		if (index1.size() == 0) {
+			System.out.println(search1 + " element is not present in the list");
+		} else {
+			String indexValues = index1.toString();
+			System.out.println(search1 + " element is present in the indexes of list");
+			System.out.println(indexValues);
+		}
+		System.out.println(" ");
+		String search2 = new String("Maths");
+		ArrayList<Integer> index2 = dllg.findAll(search2);
+		if (index2.size() == 0) {
+			System.out.println(search2 + " element is not present in the list");
+		} else {
+			String indexValues = index2.toString();
+			System.out.println(search2 + " element is present in the indexes of list at");
+			System.out.println(indexValues);
+		}
+		System.out.println(" ");
+
 	}
 }
